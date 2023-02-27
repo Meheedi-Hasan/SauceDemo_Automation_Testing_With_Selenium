@@ -1,0 +1,13 @@
+<suite thread-count="1" verbose="1" name="Saucedemo Testing">
+    <test name="Saucedemo Login Page">
+        <classes>
+            <class name="TestRunner.LoginTestRunner"/>
+        </classes>
+    </test>
+    <test name="Saucedemo Order Process">
+        <classes>
+            <class name="TestRunner.OrderTestRunner"/>
+        </classes>
+    </test>
+
+</suite>
