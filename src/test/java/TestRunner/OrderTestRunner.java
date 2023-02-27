@@ -16,7 +16,7 @@ public class OrderTestRunner extends Setup {
     public void Purchase() throws IOException, ParseException, InterruptedException {
         driver.get("https://www.saucedemo.com/");
         object1 = new OrderPage(driver);
-        utils = new Utils();
+        utils = new Utils(driver);
         utils.getUserCreds(0);
         String actual2 = object1.Purchase(utils.getUsername(), utils.getPassword());
         Assert.assertEquals(actual2, "THANK YOU FOR YOUR ORDER");

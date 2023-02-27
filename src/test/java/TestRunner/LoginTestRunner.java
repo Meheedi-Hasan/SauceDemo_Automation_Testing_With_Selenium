@@ -17,7 +17,7 @@ public class LoginTestRunner extends Setup {
     public void Login_With_valid() throws IOException, ParseException, InterruptedException {
         driver.get("https://www.saucedemo.com/");
         loginPage = new LoginPage(driver);
-        utils = new Utils();
+        utils = new Utils(driver);
         utils.getUserCreds(0);
         String nn = loginPage.Login_With_valid(utils.getUsername(), utils.getPassword());
         Assert.assertEquals(nn, "PRODUCTS");
@@ -28,7 +28,7 @@ public class LoginTestRunner extends Setup {
     public void Login_With_Wrong() throws IOException, ParseException, InterruptedException {
         driver.get("https://www.saucedemo.com/");
         loginPage = new LoginPage(driver);
-        utils = new Utils();
+        utils = new Utils(driver);
         utils.getUserCreds(1);
         String actual1 = loginPage.Login_With_Wrong(utils.getUsername(), utils.getPassword());
         Assert.assertEquals(actual1, "Epic sadface: Username and password do not match any user in this service");
